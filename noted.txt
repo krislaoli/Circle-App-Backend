@@ -1,3 +1,9 @@
+
+/// buat file .dockerignore
+node_modules
+npm-debug.log
+
+/// buat file Dockerfile 
 # Gunakan node versi yang diinginkan sebagai base image
 FROM node:18-alpine
 

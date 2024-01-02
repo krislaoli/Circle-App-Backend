@@ -2,11 +2,16 @@ import { AppDataSource } from "./data-source";
 import * as express from "express";
 import router from "./route";
 import * as cors from "cors";
+import { redisConnect } from "./utils/redis";
+
+
 
 AppDataSource.initialize()
+
   .then(async () => {
     const app = express();
     const port = 5000;
+    redisConnect();
 
     const options: cors.CorsOptions = {
       allowedHeaders: [, "X-Requested-With", "Content-Type", "Authorization"],
